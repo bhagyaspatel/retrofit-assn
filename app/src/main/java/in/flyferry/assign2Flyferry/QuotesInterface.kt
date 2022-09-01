@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface QuotesInterface {
 
-    @GET("quotes?")
+    @GET("/quotes")
     suspend fun getQuotes(@Query("page")page : Int) : Response<Quotes>
 
     //https://quotable.io/quotes?page=1
