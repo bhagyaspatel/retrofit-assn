@@ -35,10 +35,12 @@ class QuotesAdapter (val context : Context, val quoteResult : List<Result>) : Re
         holder.author.text = currentQuote.author
         holder.authorSlug.text = currentQuote.authorSlug
         holder.content.text = currentQuote.content
+        val ll = holder.linearLayout
+        val list = currentQuote.tags
 
-        currentQuote.tags.forEach { tag ->
-            Log.d(TAG, tag)
+        list.forEach { tag ->
             val textView = TextView(context)
+//            Log.d(TAG, tag)
 
             textView.layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -52,7 +54,7 @@ class QuotesAdapter (val context : Context, val quoteResult : List<Result>) : Re
             textView.textSize = 16.0F
             textView.setTextColor(Color.parseColor("#FF000000"))
 
-            holder.linearLayout.addView(textView)
+            ll.addView(textView)
         }
     }
 
